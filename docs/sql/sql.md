@@ -44,3 +44,24 @@ DROP VIEW viewname;
 ## 事务处理
 
 ## 游标
+
+## 约束
+
+1. 主键约束
+2. 外键约束
+3. 唯一约束
+4. 检查约束
+
+## 索引
+
+```sql
+CREATE INDEX indexname
+ON tablename (cloumnname)
+```
+
+## 触发器
+
+## 安全
+
+1. GRANT语句
+2. REVOKE语句
