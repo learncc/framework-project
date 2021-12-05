@@ -28,3 +28,13 @@ DROP TABLE tablename;
 
 -- 重命名表（MySQL、Oracle使用RENAME语句）
 ```
+
+## 视图
+
+```sql
+-- 创建视图
+CREATE VIEW viewname AS SELECT语句;
+
+-- 删除视图
+DROP VIEW viewname;
+```
