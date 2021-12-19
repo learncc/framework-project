@@ -16,6 +16,17 @@ CREATE TABLE tablename
     price DECIMAL(10) DEFAULT 1
 );
 
+-- MySQL版本
+CREATE TABLE tablename
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    prod_id CHAR(10) NULL,
+    prod_desc CHAR(12),
+    prod_price DECIMAL(10) DEFAULT 1,
+    -- 支持组合主键
+    PRIMARY KEY (id)
+) ENGINE = InnoDB;
+
 -- 更新表
 ALTER TABLE tablename
 ADD phone VARCHAR(20);
@@ -27,6 +38,7 @@ DROP COLUMN phone;
 DROP TABLE tablename;
 
 -- 重命名表（MySQL、Oracle使用RENAME语句）
+RENAME TABLE tablename TO tablename2;
 ```
 
 ## 视图
