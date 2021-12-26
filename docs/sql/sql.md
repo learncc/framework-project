@@ -2,6 +2,19 @@
 
 # SQL
 
+## 插入数据
+
+1. INSERT INTO table(column...) VALUES (...)
+2. INSERT INTO table(column...) SELECT语句
+
+## 更新数据
+
+UPDATE table SET column=xxx... WHERE语句
+
+## 删除数据
+
+DELETE FROM table WHERE语句
+
 ## 表
 
 ```sql
