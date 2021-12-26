@@ -2,7 +2,9 @@
 
 # MySQL
 
-## 基本操作
+## 常用操作
+
+### 基本操作
 
 ```sql
 -- 查询数据库
@@ -18,21 +20,16 @@ SHOW TABLES;
 SHOW COLUMNS FROM tablename;
 DESCRIBE tablename;
 
--- 其他
--- 服务器状态信息
-SHOW STATUS;
 -- 创建特定数据库、表、视图的语句
 SHOW CREATE DATABASE databasename;
 SHOW CREATE TABLE tablename;
 SHOW CREATE VIEW viewname;
--- 显示授予的权限
-SHOW GRANTS;
--- 显示服务器错误/警告
-SHOW ERRORS;
-SHOW WARNINGS;
+
+-- 解释如何执行SELECT语句
+EXPLAIN SELECT语句
 ```
 
-## 字符集和校对顺序
+### 字符集
 
 ```sql
 -- 查看字符集
@@ -48,7 +45,48 @@ SHOW VARIABLES LIKE 'collation%';
 
 > 可以对特定的表和列定义字符集和校对，或者在需要时使用备用的校对
 
-## 用户及授权管理
+### 函数
+
+日期函数
+
+![日期函数](img\date_function.jpg)
+
+数值函数
+
+![数值函数](img\math_function.jpg)
+
+字符串函数
+
+![字符串函数](img\string_function.jpg)
+
+其他函数
+
+1. ISNULL(exper)：判断exper是否为空，是则返回1，否则返回0
+2. CAST(字段名 AS 转换的类型 )
+
+## 数据库维护
+
+### 运行状态
+
+```sql
+-- 服务器状态信息
+SHOW STATUS;
+-- 显示服务器错误/警告
+SHOW ERRORS;
+SHOW WARNINGS;
+
+-- 查看表键是否正确
+ANALYZE TABLE tablename;
+-- 对表进行检查
+CHECK TABLE tablename;
+-- 删除大量数据后收回所用空间
+OPTIMIZE TABLE tablename;
+
+-- 显示所有活动线程
+SHOW PROCESSLIST;
+```
+
+### 用户管理
 
 ```sql
 -- 获取用户信息
@@ -74,7 +112,11 @@ GRANT SELECT,INSERT ON databasename.* TO username;
 REVOKE SELECT ON databasename.* FROM username;
 ```
 
-## 数据库维护
+权限列表
+
+![权限列表](img/revoke.jpg)
+
+### 日志
 
 - 备份（dump）
 - 数据库维护
@@ -85,24 +127,8 @@ REVOKE SELECT ON databasename.* FROM username;
     4. 缓慢查询日志（hostname-slow.log）
 
 ```sql
--- 查看表键是否正确
-ANALYZE TABLE tablename;
--- 对表进行检查
-CHECK TABLE tablename;
--- 删除大量数据后收回所用空间
-OPTIMIZE TABLE tablename;
-
 -- 查询日志路径 log_error、general_log_file、slow_query_log_file
 SHOW VARIABLES LIKE 'log%';
 -- 刷新、重新开始记录日志
 FLUSH LOGS;
-```
-
-## 改善性能
-
-```sql
--- 显示所有活动线程
-SHOW PROCESSLIST;
--- 解释如何执行SELECT语句
-EXPLAIN SELECT语句
 ```
