@@ -62,7 +62,8 @@ SHOW VARIABLES LIKE 'collation%';
 其他函数
 
 1. ISNULL(exper)：判断exper是否为空，是则返回1，否则返回0
-2. CAST(字段名 AS 转换的类型 )
+2. IFNULL(exper1,exper2)：如果exper1为空则返回exper2
+3. CAST(字段名 AS 转换的类型 )
 
 ## 数据库维护
 
